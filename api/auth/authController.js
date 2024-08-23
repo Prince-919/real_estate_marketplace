@@ -1,5 +1,6 @@
 import User from "../user/userModel.js";
 import { errorHandler } from "../utils/error.js";
+import hashPassword from "../utils/hashPassword.js";
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
@@ -14,7 +15,9 @@ export const signup = async (req, res, next) => {
     return next(errorHandler(400, "All fields are required"));
   }
 
-  const newUser = new User({ username, email, password });
+  const hashedPassword = await hashPassword(password);
+
+  const newUser = new User({ username, email, password: hashedPassword });
 
   try {
     await newUser.save();
