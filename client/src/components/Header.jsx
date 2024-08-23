@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="bg-slate-100">
+    <header className="bg-slate-200 shadow-sm">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link
           to="/"
@@ -12,7 +12,7 @@ const Header = () => {
           <span className="px-2 py-1 gradient-bg rounded-lg text-slate-700">
             Prince's
           </span>
-          <span className="text-slate-600">EState</span>
+          <span className="text-slate-600">Estate</span>
         </Link>
         <form className="bg-white p-3 rounded-lg flex items-center">
           <input

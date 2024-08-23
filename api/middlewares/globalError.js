@@ -3,7 +3,7 @@ const globalError = (err, req, res, next) => {
   const message = err.message || "Internal Server Error";
 
   res.status(statusCode).json({
-    success: true,
+    success: false,
     statusCode,
     message,
   });
