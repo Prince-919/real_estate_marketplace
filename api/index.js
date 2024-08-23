@@ -4,10 +4,6 @@ import { config } from "./config/config.js";
 
 const app = express();
 
-app.get("/test", (req, res) => {
-  res.send("API Warking");
-});
-
 const startServer = async () => {
   try {
     await dbConnect();
